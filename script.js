@@ -1,16 +1,37 @@
-var givenName = $(".name-greeting")
-$(".get-started").on("click", function() {
+var greeting = $(".name-greeting")
+var getStartedBtn = $(".get-started")
+var schedulerBtn = $(".scheduler")
+var locateFitBtn = $(".maps-btn")
+var modalArea = $(".modal")
+var inputArea = $("#textarea")
+var modalSubmit = $("#submit-name")
+var closeBtn = $(".close")
 
-    var userName = prompt("What is your name?")
-    localStorage.setItem("User Name", userName)
-    $(".get-started").hide()
+function renderGreeting() {
 
-    var greeting = "Hello, " + userName + "!"
-    givenName.text(greeting).css("font-size", "xx-large")
+    var greetingName = localStorage.getItem("username")
+
+    if (localStorage.getItem("username") !== null) {
+        
+        getStartedBtn.hide()
+        greeting.text("Hello, " + greetingName + "!")
+    }
+}
+
+renderGreeting()
+
+getStartedBtn.on("click", function () {
+    modalArea.show()
 })
 
-console.log(localStorage.getItem("User Name"))
+modalSubmit.on("click", function () {
+    var userName = inputArea.val()
+    localStorage.setItem("username", userName)
+    renderGreeting()
+    modalArea.hide()
+})
 
-if (localStorage.getItem("User Name") !== null) {
-    $(".start-btn").hide()
-}
+closeBtn.on("click", function(){
+    modalArea.hide()
+})
+
