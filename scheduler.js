@@ -32,6 +32,24 @@ for (i = 0; i < dayBlock.length; i++) {
     blockToWrite.append(", " + dateDisplay.text())
 }
 
+for (k = 0; k < localStorage.length; k++) {
+
+    var scheduledArray = localStorage.getItem(localStorage.key(k)).split(", ")
+
+    for (w = 0; w < scheduledArray.length; w++) {
+
+        var correctBlock = $("td:contains('" + localStorage.key(k) + "')")
+        var storedWorkout = scheduledArray[w]
+        var workoutBtn = $("<button>")
+        workoutBtn.text(storedWorkout)
+        correctBlock.next().append(workoutBtn)
+
+    }
+
+
+}
+
+
 
 $(".workoutPlan").on("click", function () {
 
@@ -48,7 +66,7 @@ dayBlock.on("click", function () {
 
     modalText.text("Scheduled workouts for " + clickedDt + ": ")
 
-    modalSubmit.unbind().click(function() {
+    modalSubmit.unbind().click(function () {
 
         event.stopImmediatePropagation()
         event.preventDefault()
