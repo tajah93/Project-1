@@ -13,6 +13,13 @@
  
 
 var dayBlock = $(".Days")
+var workoutModal = $("#scheduler-modal")
+var inputArea = $("#textarea")
+var modalSubmit = $("#submit-workout")
+var closeBtn = $(".close")
+var workoutList = $(".workout-text")
+var numberCheck = RegExp(/[0-9]/)
+
 for (i = 0; i < dayBlock.length; i++) {
     
     var blockToWrite = dayBlock[i]
@@ -25,10 +32,25 @@ for (i = 0; i < dayBlock.length; i++) {
 }
 
 
-$(".workoutPlan").on("click", function() {   
-    var storedDt = $(this).prev().text() 
-    console.log(moment(storedDt, "dddd, L").format("L"))
+$(".workoutPlan").on("click", function() { 
+
+    var scheduleDt = $(this).prev().text() 
+    console.log(moment(scheduleDt, "dddd, L").format("dddd, L"))
 })
+
+dayBlock.on("click", function() {
+
+    var clickedDt = $(this).text()
+    workoutList.text("Scheduled workouts for " + clickedDt + ": ")
+    workoutModal.show()
+
+})
+
+closeBtn.on("click", function() {
+    workoutModal.hide()
+})
+
+
 
 
 var youtubeAPI = "https://www.googleapis.com/youtube/v3/search"

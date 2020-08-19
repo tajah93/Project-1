@@ -2,7 +2,7 @@ var greeting = $(".name-greeting")
 var getStartedBtn = $(".get-started")
 var schedulerBtn = $(".scheduler")
 var locateFitBtn = $(".maps-btn")
-var modalArea = $(".modal")
+var homeModal = $("#home-modal")
 var inputArea = $("#textarea")
 var modalSubmit = $("#submit-name")
 var closeBtn = $(".close")
@@ -23,17 +23,17 @@ function renderGreeting() {
 renderGreeting()
 
 getStartedBtn.on("click", function () {
-    modalArea.show()
+    homeModal.show()
 })
 
 modalSubmit.on("click", function () {
     var userName = inputArea.val()
     localStorage.setItem("username", userName)
     renderGreeting()
-    modalArea.hide()
+    homeModal.hide()
 })
 
 closeBtn.on("click", function(){
-    modalArea.hide()
+    homeModal.hide()
 })
 
