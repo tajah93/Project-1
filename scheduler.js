@@ -1,16 +1,33 @@
-//Calling collapse button to collapse 
-$('.collapse').collapse()
+// //Calling collapse button to collapse 
+// $('.collapse').collapse()
 
-//Moment.js for Day and Time 
-$(document).ready(function() {
+// //Moment.js for Day and Time 
+// $(document).ready(function() {
 
-const m = moment.format('LLL');
-console.log(m.toString());
+// const m = moment.format('LLL');
+// console.log(m.toString());
 
-$("#time").text(m);
+// $("#time").text(m);
 
-});
+// });
  
+
+var dayBlock = $(".Days")
+for (i = 0; i < dayBlock.length; i++) {
+    
+    var blockToWrite = dayBlock[i]
+    var dayTxt = blockToWrite.innerHTML
+    console.log(dayTxt)
+    console.log(moment(dayTxt, "dddd").format("L"))
+    var dayDt = moment(dayTxt, "dddd").format("L")
+    var dateDisplay = $("<p>").addClass("day-date")
+    dateDisplay.text(dayDt)
+    console.log(dateDisplay.text())
+    
+    blockToWrite.append(", " + dateDisplay.text())
+}
+
+
 var youtubeAPI = "https://www.googleapis.com/youtube/v3/search"
 var apiKey = "AIzaSyAFvkpiXzwbO7dR0Nu3SG6_RcNQQT4fvJQ"
 
