@@ -53,9 +53,6 @@ dayBlock.on("click", function () {
         event.stopImmediatePropagation()
         event.preventDefault()
 
-        console.log(clickedDt)
-
-        console.log("click1")
         var addedWorkout = inputArea.val()
         var workoutBtn = $("<button>")
         workoutBtn.text(addedWorkout)
@@ -80,7 +77,6 @@ dayBlock.on("click", function () {
             break;
         } else {
             workoutList.text("")
-            console.log(localStorage.getItem(clickedDt))
         }
     }
 
@@ -89,7 +85,6 @@ dayBlock.on("click", function () {
     closeBtn.one("click", function () {
 
         workoutModal.hide()
-        clickedDt - ""
     })
 })
 
