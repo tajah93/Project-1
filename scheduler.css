@@ -1,0 +1,83 @@
+.background-color {
+    background: linear-gradient(to top right, #00838f 0%, #8e24aa  100%)
+}
+
+.navbar.navbar {
+    background-color: #2f3352d0;
+    font-family: 'Be Vietnam', sans-serif;
+    font-weight: bolder;
+}
+
+a.nav-link {
+    color: #9c27b0;
+    background-color: rgba(255, 255, 255, 0.356);
+    font-family: 'Be Vietnam', sans-serif;
+}
+
+button.navbar-toggler {
+    background-color: #673ab7;
+}
+
+
+h3{
+    padding: 20px !important;
+    color: rgb(230, 230, 230);
+    font-family: 'Be Vietnam', sans-serif;
+}
+
+.table {
+    border: 2px solid;
+    border-color: #283493c0;
+    border-radius: 5px !important;
+}
+
+.Days {
+    width: 10vw;
+    height: 20vh;
+    border: 2px solid;
+    border-color: #283493c0;
+    border-radius: 5px !important;
+    background-color: #03a8f46b;
+    color: rgb(230, 230, 230);
+    font-family: 'Be Vietnam', sans-serif;
+}
+
+.workoutPlan {
+    width: 30vw;
+    height: 20vh;
+    border: 2px solid;
+    border-color: #283493c0;
+    border-radius: 5px !important;
+    background-color:  #03a8f46b;
+}
+
+.pagination {
+    justify-content: center !important;
+}
+
+.pagination {
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.active {
+    display:none !important;
+}
+
+#pageNumber {
+    display:none !important;
+} 
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: .2rem;
+    margin-top: 30px;
+    background-color: #2f3352d0 !important;
+}
+
+.footer-text {
+    text-align: center;
+    font-family: 'Be Vietnam', sans-serif;
+}
+      
