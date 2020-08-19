@@ -1,0 +1,27 @@
+.jumbotron {
+    text-align: center;
+    background-color: black;
+}
+
+.title {
+    font-size: 150px;
+    text-align: center;
+    color: orangered;
+}
+
+body {
+    background-color: grey;
+}
+
+.btn.btn-primary {
+    background-color: gray;
+}
+
+.card.card-body {
+    background-color: black;
+    color: orangered
+}
+
+.btn.btn-dark {
+    color: orangered;
+}
