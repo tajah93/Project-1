@@ -17,15 +17,18 @@ for (i = 0; i < dayBlock.length; i++) {
     
     var blockToWrite = dayBlock[i]
     var dayTxt = blockToWrite.innerHTML
-    console.log(dayTxt)
-    console.log(moment(dayTxt, "dddd").format("L"))
     var dayDt = moment(dayTxt, "dddd").format("L")
     var dateDisplay = $("<p>").addClass("day-date")
     dateDisplay.text(dayDt)
-    console.log(dateDisplay.text())
     
     blockToWrite.append(", " + dateDisplay.text())
 }
+
+
+$(".workoutPlan").on("click", function() {   
+    var storedDt = $(this).prev().text() 
+    console.log(moment(storedDt, "dddd, L").format("L"))
+})
 
 
 var youtubeAPI = "https://www.googleapis.com/youtube/v3/search"
