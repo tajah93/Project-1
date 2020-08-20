@@ -1,17 +1,4 @@
-// //Calling collapse button to collapse 
-// $('.collapse').collapse()
-
-// //Moment.js for Day and Time 
-// $(document).ready(function() {
-
-// const m = moment.format('LLL');
-// console.log(m.toString());
-
-// $("#time").text(m);
-
-// });
-
-
+// defining some global variables
 var dayBlock = $(".Days")
 var workoutModal = $("#scheduler-modal")
 var inputArea = $("#textarea")
@@ -21,6 +8,7 @@ var modalText = $(".modal-text")
 var workoutList = $(".workout-list")
 var numberCheck = RegExp(/[0-9]/)
 
+// Assigns proper date to each day of the week on scheduler
 for (i = 0; i < dayBlock.length; i++) {
 
     var blockToWrite = dayBlock[i]
@@ -32,6 +20,7 @@ for (i = 0; i < dayBlock.length; i++) {
     blockToWrite.append(", " + dateDisplay.text())
 }
 
+// creates workout button for each scheduled workout found in local storage and renders those buttons on correct row
 for (k = 0; k < localStorage.length; k++) {
 
     var scheduledArray = localStorage.getItem(localStorage.key(k)).split(", ")
@@ -49,23 +38,20 @@ for (k = 0; k < localStorage.length; k++) {
 
 }
 
-
-
-$(".workoutPlan").on("click", function () {
-
-    var scheduleDt = $(this).prev().text()
-    console.log(moment(scheduleDt, "dddd, L").format("dddd, L"))
-})
-
+// modal used to schedule workouts appears when clicking on block with day/date
 dayBlock.on("click", function () {
 
+    // Empties any text lingering from pervious modal use
     inputArea.empty()
+
+    // grabs date of clicked date block
     var workoutBlock = $(this).next()
     var clickedDt = $(this).text()
-    console.log(clickedDt)
 
+    // renders some text shown to user at top of modal
     modalText.text("Scheduled workouts for " + clickedDt + ": ")
 
+    // Listener that ensures only one submission per click
     modalSubmit.unbind().click(function () {
 
         event.stopImmediatePropagation()
@@ -76,6 +62,7 @@ dayBlock.on("click", function () {
         workoutBtn.text(addedWorkout)
         workoutBlock.append(workoutBtn)
 
+        // Adds submitted workout to line under initial modal
         if (workoutList.text() === "") {
 
             workoutList.append(addedWorkout)
@@ -83,9 +70,11 @@ dayBlock.on("click", function () {
             workoutList.append(", " + addedWorkout)
         }
 
+        // Stores workout list as value to date key after latest workout is appended to list
         localStorage.setItem(clickedDt, workoutList.text())
     })
 
+    // checks local storage and renders workout list if workouts exist there
     for (i = 0; i < localStorage.length; i++) {
 
         if (clickedDt == localStorage.key(i)) {
@@ -94,12 +83,15 @@ dayBlock.on("click", function () {
             console.log(localStorage.getItem(clickedDt))
             break;
         } else {
+
             workoutList.text("")
         }
     }
 
+    // displays modal
     workoutModal.show()
 
+    // close button hides modal
     closeBtn.one("click", function () {
 
         workoutModal.hide()
@@ -114,7 +106,7 @@ dayBlock.on("click", function () {
 
 
 
-
+// Workout button listener on scheduler that pulls up youtube videos
 $(".workout-btn").on("click", function () {
 
     var buttonTxt = $(this).text()
