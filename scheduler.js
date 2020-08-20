@@ -10,4 +10,8 @@ console.log(m.toString());
 $("#time").text(m);
 
 });
+
+$("#scheduleWorkout").click(function(){
+    window.location.href="scheduler.html"
+})
  
