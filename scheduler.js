@@ -40,7 +40,7 @@ for (k = 0; k < localStorage.length; k++) {
 
         var correctBlock = $("td:contains('" + localStorage.key(k) + "')")
         var storedWorkout = scheduledArray[w]
-        var workoutBtn = $("<button>")
+        var workoutBtn = $("<button>").addClass("workout-btn")
         workoutBtn.text(storedWorkout)
         correctBlock.next().append(workoutBtn)
 
@@ -113,40 +113,61 @@ dayBlock.on("click", function () {
 
 
 
-var youtubeAPI = "https://www.googleapis.com/youtube/v3/search"
-var apiKey = "AIzaSyAFvkpiXzwbO7dR0Nu3SG6_RcNQQT4fvJQ"
 
-function getYoutube() {
-    $.ajax({
-        url: youtubeAPI,
-        type: "GET",
-        data: {
-            key: apiKey,
-            q: "Cars",
-            maxResults: 5,
-            type: "video",
-            videoEmbeddable: true,
-            part: "snippet"
-        },
-        success: function (data) {
-            embedVideo(data)
-        },
-        error: function (response) {
-            console.log("Request Failed");
-        }
-    })
-}
 
-function embedVideo(data) {
-    for (var i = 0; i < data.items.length; i++) {
+$(".workout-btn").on("click", function () {
 
-        var pageBody = $("body")
-        var videoDiv = $("<div>").addClass("video-container")
-        var videoTitle = $("<h3>").html(data.items[i].snippet.title)
-        var currentIframe = $("<iframe>").attr("data-log", i)
+    var buttonTxt = $(this).text()
+    var youtubeAPI = "https://www.googleapis.com/youtube/v3/search"
+    var apiKey = "AIzaSyAFvkpiXzwbO7dR0Nu3SG6_RcNQQT4fvJQ"
 
-        $(currentIframe).attr('src', 'https://www.youtube.com/embed/' + data.items[i].id.videoId)
-        $("body").append(videoDiv.append(videoTitle, currentIframe))
-        console.log(data.items[i])
+    function getYoutube() {
+        $.ajax({
+            url: youtubeAPI,
+            type: "GET",
+            data: {
+                key: apiKey,
+                q: buttonTxt,
+                maxResults: 5,
+                type: "video",
+                videoEmbeddable: true,
+                part: "snippet"
+            },
+            success: function (data) {
+                embedVideo(data)
+            },
+            error: function (response) {
+                console.log("Request Failed");
+            }
+        })
     }
-}
+
+
+    function embedVideo(data) {
+
+        var videoDiv = $("<div>").addClass("video-modal")
+        $(".container").prepend(videoDiv)
+        
+        var vidModalContent = $("<div>").addClass("video-modal-content")
+        videoDiv.append(vidModalContent)
+
+        var videosClose = $("<span>").addClass("video-close")
+        vidModalContent.append(videosClose)
+        videosClose.html('&times;')
+
+        var videosDiv = $("<section>").addClass("video-display")
+        vidModalContent.append(videosDiv)
+
+        for (var i = 0; i < data.items.length; i++) {
+
+            var videoTitle = $("<h3>").html(data.items[i].snippet.title)
+            var currentIframe = $("<iframe>")
+
+            currentIframe.attr('src', 'https://www.youtube.com/embed/' + data.items[i].id.videoId)
+
+            videosDiv.append(videoTitle, currentIframe)
+            console.log(data.items[i])            
+        }
+    }
+    getYoutube()
+})
