@@ -145,7 +145,7 @@ $(".workout-btn").on("click", function () {
 
     function embedVideo(data) {
 
-        var videoDiv = $("<div>").addClass("video-modal")
+        var videoDiv = $("<div>").addClass("video-model")
         $(".container").prepend(videoDiv)
         
         var vidModalContent = $("<div>").addClass("video-modal-content")
@@ -154,6 +154,11 @@ $(".workout-btn").on("click", function () {
         var videosClose = $("<span>").addClass("video-close")
         vidModalContent.append(videosClose)
         videosClose.html('&times;')
+
+        videosClose.on("click", function(){
+
+            $(".video-model").remove()
+        })
 
         var videosDiv = $("<section>").addClass("video-display")
         vidModalContent.append(videosDiv)
