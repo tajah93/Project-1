@@ -1,5 +1,4 @@
-//Calling collapse button to collapse 
-$('.collapse').collapse()
+
 
 //Moment.js for Day and Time 
 $(document).ready(function() {
