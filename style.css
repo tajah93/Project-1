@@ -3,10 +3,19 @@
     background-color: black;
 }
 
+
 .title {
     font-size: 150px;
-    text-align: center;
+    text-align: center !important;
     color: orangered;
+    background-color: black;   
+    width: fit-content;
+}
+
+h1.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em
 }
 
 .name-greeting {
@@ -91,4 +100,18 @@ a:hover {
     border-color: black;
     color: black;
     transition: all .3s ease-in-out;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: .2rem;
+    margin-top: 30px;
+    background-color: #343a40 !important;
+}
+
+.footer-text {
+    text-align: center;
+    font-family: 'Be Vietnam', sans-serif;
 }
