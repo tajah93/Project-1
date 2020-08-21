@@ -59,7 +59,15 @@
   
   <div class="container">
     <h1 id="time"></h1>
-    <h3 id="mySched">My Schedule</h3>
+    <div class="row">
+      <div class="col-6">
+        <h3 id="mySched">My Schedule</h3>
+      </div>
+      <div class="col-6">
+        <h2><button type="button" class="btn" id="clear-btn" style="background-color: black; color: orangered;">Clear All Workouts</button></h2>
+      </div>
+    </div>
+
 
     <div id="scheduler-modal" class="modal">
 
@@ -79,32 +87,39 @@
       <tbody>
         <tr>
           <td class="Days">Sunday</td>
-          <td class="workoutPlan"></td>
+          <td class="workoutPlan"><button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">×</span></button></td>
+          
         </tr>
         <tr>
           <td class="Days">Monday</td>
-
-          <td class="workoutPlan"></td>
+          <td class="workoutPlan"><button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">×</span></button></td>
         </tr>
         <tr>
           <td class="Days">Tuesday</td>
-          <td class="workoutPlan"></td>
+          <td class="workoutPlan"><button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">×</span></button></td>
         </tr>
         <tr>
           <td class="Days">Wednesday</td>
-          <td class="workoutPlan"></td>
+          <td class="workoutPlan"><button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">×</span></button></td>
         </tr>
         <tr>
           <td class="Days">Thursday</td>
-          <td class="workoutPlan"></td>
+          <td class="workoutPlan"><button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">×</span></button></td>
         </tr>
         <tr>
           <td class="Days">Friday</td>
-          <td class="workoutPlan"></td>
+          <td class="workoutPlan"><button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">×</span></button></td>
         </tr>
         <tr>
           <td class="Days">Saturday</td>
-          <td class="workoutPlan"></td>
+          <td class="workoutPlan"><button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">×</span></button></td>
         </tr>
       </tbody>
     </table>
