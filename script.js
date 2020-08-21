@@ -7,8 +7,6 @@ var inputArea = $("#textarea")
 var modalSubmit = $("#submit-name")
 var closeBtn = $(".close")
 
-console.log(moment().format("MM/DD/YYYY"))
-
 function renderGreeting() {
 
     var greetingName = localStorage.getItem("username")
