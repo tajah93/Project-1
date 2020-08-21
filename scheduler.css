@@ -117,6 +117,19 @@ footer {
     width: 50%;
 }
 
+.close-modal {
+    color: black;
+    align-self: end;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-modal:hover, .close-modal:focus {
+    color: orangered;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .close {
     color: black;
     align-self: end;
@@ -199,12 +212,9 @@ iframe {
     border-color: orangered;
     color: white;
     text-align: center;
-    padding: 20px;
-    width: 35vw;
+    width: fit-content;
     transition: all 0.5s;
     cursor: pointer;
-    position: absolute;
-    font-size: 15px;
     font-weight: bold;
 }
 
