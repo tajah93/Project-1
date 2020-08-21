@@ -1,33 +1,43 @@
 .background-color {
-    background: linear-gradient(to top right, #00838f 0%, #8e24aa  100%)
+    background-color:grey; 
 }
 
-.navbar.navbar {
-    background-color: #2f3352d0;
+#navbar {
+    background-color:black !important;
     font-family: 'Be Vietnam', sans-serif;
     font-weight: bolder;
 }
 
-a.nav-link {
-    color: #9c27b0;
-    background-color: rgba(255, 255, 255, 0.356);
-    font-family: 'Be Vietnam', sans-serif;
+.nav-link {
+    background-color: rgba(255, 255, 255, 0.397);
+    color: orangered !important;  
 }
 
 button.navbar-toggler {
-    background-color: #673ab7;
+    background-color: #343a40;
+}
+
+button.navbar-toggler:active {
+    background-color: gray;
 }
 
 
-h3{
-    padding: 20px !important;
-    color: rgb(230, 230, 230);
+.navbar-brand {
+    color: orangered !important;
+    font-weight: bold;
+}
+#mySched {
+    padding-top: 70px;
+    padding-bottom: 20px !important;
+    color: orangered;
+
     font-family: 'Be Vietnam', sans-serif;
+    font-weight: bold;
 }
 
 .table {
     border: 2px solid;
-    border-color: #283493c0;
+    border-color: orangered;
     border-radius: 5px !important;
 }
 
@@ -35,10 +45,10 @@ h3{
     width: 10vw;
     height: 20vh;
     border: 2px solid;
-    border-color: #283493c0;
+    border-color: orangered;
     border-radius: 5px !important;
-    background-color: #03a8f46b;
-    color: rgb(230, 230, 230);
+    background-color: #343a40;
+    color: white;
     font-family: 'Be Vietnam', sans-serif;
 }
 
@@ -46,9 +56,9 @@ h3{
     width: 30vw;
     height: 20vh;
     border: 2px solid;
-    border-color: #283493c0;
+    border-color: orangered;
     border-radius: 5px !important;
-    background-color:  #03a8f46b;
+    background-color:  #343a40;
 }
 
 .pagination {
@@ -73,7 +83,7 @@ footer {
     flex-direction: column;
     padding-bottom: .2rem;
     margin-top: 30px;
-    background-color: #2f3352d0 !important;
+    background-color: #343a40 !important;
 }
 
 .footer-text {
