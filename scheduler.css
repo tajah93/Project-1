@@ -9,7 +9,7 @@
 }
 
 .nav-link {
-    background-color: rgba(255, 255, 255, 0.397);
+    background-color: rgba(34, 34, 34, 0.445);
     color: orangered !important;  
 }
 
@@ -21,18 +21,25 @@ button.navbar-toggler:active {
     background-color: gray;
 }
 
-
 .navbar-brand {
     color: orangered !important;
     font-weight: bold;
 }
-#mySched {
-    padding-top: 70px;
-    padding-bottom: 20px !important;
-    color: orangered;
 
+#mySched {
+    padding-top: 80px;
+    padding-bottom: 30px !important;
+    color: orangered;
     font-family: 'Be Vietnam', sans-serif;
     font-weight: bold;
+}
+
+#clear-btn {
+    margin-top: 80px;
+    float: right;
+    font-size: 8px;
+    height: 5vh;
+    font-weight: bolder;
 }
 
 .table {
@@ -158,14 +165,14 @@ footer {
     background-color: black;
     margin: 5% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid orangered;
     width: 50%;
     height: -webkit-fill-available;
     overflow-y: scroll;
 }
 
 .video-close {
-    color: white;
+    color: orangered;
     font-size: 28px;
     font-weight: bold;
 }
@@ -181,17 +188,36 @@ iframe {
     height: 45vh;  
 }
 
-@media screen and (max-width: 1300px) {
-    
-    .video-modal-content {
-        width: 75%;
-    }
+.video-display {
+    color: orangered;
+    font-weight: bold;
+    font-family: 'Be Vietnam', sans-serif;
 }
 
-@media screen and (max-width: 775px){
-
-    .video-modal-content {
-
-        width: 100%;
-    }
+.workout-btn {
+    background-color: orangered;
+    border-color: orangered;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 35vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    position: absolute;
+    font-size: 15px;
+    font-weight: bold;
 }
+
+.workout-btn:hover, .workout-btn:active {
+    background-color: black;
+    border-color: orangered;
+    color: orangered
+}
+
+/* make media q for horizonatal option using a range for min-width and max
+/*@media only screen and (min-width: 760px) {
+    .workout-btn {
+     
+      margin-left: 70px;
+    }
+  }
