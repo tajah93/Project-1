@@ -21,6 +21,7 @@ button.navbar-toggler:active {
     background-color: gray;
 }
 
+
 .navbar-brand {
     color: orangered !important;
     font-weight: bold;
@@ -29,6 +30,7 @@ button.navbar-toggler:active {
     padding-top: 70px;
     padding-bottom: 20px !important;
     color: orangered;
+
     font-family: 'Be Vietnam', sans-serif;
     font-weight: bold;
 }
