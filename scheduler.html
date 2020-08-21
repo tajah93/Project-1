@@ -58,41 +58,56 @@
 
   
   <div class="container">
-   <h1 id="time"></h1>
-   <h3 id="mySched">My Schedule</h3>
+    <h1 id="time"></h1>
+    <h3 id="mySched">My Schedule</h3>
 
-   <table class="table" class="highlight">
-    <tbody>
-      <tr>
-        <td class="Days">Sunday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-      <tr>
-        <td class="Days">Monday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-      <tr>
-        <td class="Days">Tuesday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-      <tr>
-        <td class="Days">Wednesday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-      <tr>
-        <td class="Days">Thursday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-      <tr>
-        <td class="Days">Friday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-      <tr>
-        <td class="Days">Saturday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-    </tbody>
-  </table>
+    <div id="scheduler-modal" class="modal">
+
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p class="modal-text"></p>
+        <p class="workout-list"></p>
+        <br>
+        <p>Enter exercise below</p>
+        <br><br>
+        <input id="textarea" type="text">
+        <button id="submit-workout">Submit</button>
+      </div>
+    </div>
+
+    <table class="table" class="highlight">
+      <tbody>
+        <tr>
+          <td class="Days">Sunday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Monday</td>
+
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Tuesday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Wednesday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Thursday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Friday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Saturday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <ul class="pagination">
@@ -104,16 +119,20 @@
 
   <footer class="page-footer">
     <div class="container">
-    
-        <p class="footer-text">© 2020, Trim(fit), All rights reserved.</p>
-      </div>
+
+      <p class="footer-text">© 2020, Trim(fit), All rights reserved.</p>
+    </div>
     </div>
   </footer>
-  
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="scheduler.js"></script>
-<script src= "lib/moment/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"
+    integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+  <script src="scheduler.js"></script>
+  <!-- <script src= "lib/moment/moment.min.js"></script> -->
+
+
 
 </body>
+
 </html>
