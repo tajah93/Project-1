@@ -3,22 +3,26 @@ var dayBlock = $(".Days")
 var workoutModal = $("#scheduler-modal")
 var inputArea = $("#textarea")
 var modalSubmit = $("#submit-workout")
-var closeBtn = $(".close")
+var closeBtn = $(".close-modal")
 var modalText = $(".modal-text")
 var workoutList = $(".workout-list")
 var numberCheck = RegExp(/[0-9]/)
 
 // Assigns proper date to each day of the week on scheduler
-for (i = 0; i < dayBlock.length; i++) {
+function renderWorkouts() {
+    for (i = 0; i < dayBlock.length; i++) {
 
-    var blockToWrite = dayBlock[i]
-    var dayTxt = blockToWrite.innerHTML
-    var dayDt = moment(dayTxt, "dddd").format("L")
-    var dateDisplay = $("<p>").addClass("day-date")
-    dateDisplay.text(dayDt)
+        var blockToWrite = dayBlock[i]
+        var dayTxt = blockToWrite.innerHTML
+        var dayDt = moment(dayTxt, "dddd").format("L")
+        var dateDisplay = $("<p>").addClass("day-date")
+        dateDisplay.text(dayDt)
 
-    blockToWrite.append(", " + dateDisplay.text())
+        blockToWrite.append(", " + dateDisplay.text())
+    }
 }
+
+renderWorkouts()
 
 // creates workout button for each scheduled workout found in local storage and renders those buttons on correct row
 for (k = 0; k < localStorage.length; k++) {
@@ -32,11 +36,73 @@ for (k = 0; k < localStorage.length; k++) {
         var workoutBtn = $("<button>").addClass("workout-btn")
         workoutBtn.text(storedWorkout)
         correctBlock.next().append(workoutBtn)
-
     }
-
-
 }
+
+// Workout button listener on scheduler that pulls up youtube videos
+function workoutBtnEvent() {
+    $(".workout-btn").on("click", function () {
+
+        var buttonTxt = $(this).text()
+
+        var youtubeAPI = "https://www.googleapis.com/youtube/v3/search"
+        var apiKey = "AIzaSyAFvkpiXzwbO7dR0Nu3SG6_RcNQQT4fvJQ"
+
+        function getYoutube() {
+            $.ajax({
+                url: youtubeAPI,
+                type: "GET",
+                data: {
+                    key: apiKey,
+                    q: buttonTxt,
+                    maxResults: 5,
+                    type: "video",
+                    videoEmbeddable: true,
+                    part: "snippet"
+                },
+                success: function (data) {
+                    embedVideo(data)
+                },
+                error: function (response) {
+                    console.log("Request Failed");
+                }
+            })
+        }
+
+        function embedVideo(data) {
+
+            var videoDiv = $("<div>").addClass("video-model")
+            $(".container").prepend(videoDiv)
+
+            var vidModalContent = $("<div>").addClass("video-modal-content")
+            videoDiv.append(vidModalContent)
+
+            var videosClose = $("<span>").addClass("video-close")
+            vidModalContent.append(videosClose)
+            videosClose.html('&times;')
+
+            videosClose.on("click", function () {
+
+                $(".video-model").remove()
+            })
+
+            var videosDiv = $("<section>").addClass("video-display")
+            vidModalContent.append(videosDiv)
+
+            for (var i = 0; i < data.items.length; i++) {
+
+                var videoTitle = $("<h3>").html(data.items[i].snippet.title)
+                var currentIframe = $("<iframe>")
+
+                currentIframe.attr('src', 'https://www.youtube.com/embed/' + data.items[i].id.videoId)
+
+                videosDiv.append(videoTitle, currentIframe)
+            }
+        }
+        getYoutube()
+    })
+}
+workoutBtnEvent()
 
 // modal used to schedule workouts appears when clicking on block with day/date
 dayBlock.on("click", function () {
@@ -62,71 +128,11 @@ dayBlock.on("click", function () {
         workoutBtn.text(addedWorkout)
         workoutBlock.append(workoutBtn)
 
-        // Workout button listener on scheduler that pulls up youtube videos
-        workoutBtn.on("click", function () {
-
-            var buttonTxt = $(this).text()
-            console.log(buttonTxt)
-
-            var youtubeAPI = "https://www.googleapis.com/youtube/v3/search"
-            var apiKey = "AIzaSyAFvkpiXzwbO7dR0Nu3SG6_RcNQQT4fvJQ"
-
-            function getYoutube() {
-                $.ajax({
-                    url: youtubeAPI,
-                    type: "GET",
-                    data: {
-                        key: apiKey,
-                        q: buttonTxt,
-                        maxResults: 5,
-                        type: "video",
-                        videoEmbeddable: true,
-                        part: "snippet"
-                    },
-                    success: function (data) {
-                        embedVideo(data)
-                    },
-                    error: function (response) {
-                        console.log("Request Failed");
-                    }
-                })
-            }
-
-            function embedVideo(data) {
-
-                var videoDiv = $("<div>").addClass("video-model")
-                $(".container").prepend(videoDiv)
-
-                var vidModalContent = $("<div>").addClass("video-modal-content")
-                videoDiv.append(vidModalContent)
-
-                var videosClose = $("<span>").addClass("video-close")
-                vidModalContent.append(videosClose)
-                videosClose.html('&times;')
-
-                videosClose.on("click", function () {
-
-                    $(".video-model").remove()
-                })
-
-                var videosDiv = $("<section>").addClass("video-display")
-                vidModalContent.append(videosDiv)
-
-                for (var i = 0; i < data.items.length; i++) {
-
-                    var videoTitle = $("<h3>").html(data.items[i].snippet.title)
-                    var currentIframe = $("<iframe>")
-
-                    currentIframe.attr('src', 'https://www.youtube.com/embed/' + data.items[i].id.videoId)
-
-                    videosDiv.append(videoTitle, currentIframe)
-                    console.log(data.items[i])
-                }
-            }
-            getYoutube()
-        })
+        workoutBtnEvent()
 
         // Adds submitted workout to line under initial modal
+
+
         if (workoutList.text() === "") {
 
             workoutList.append(addedWorkout)
@@ -152,6 +158,10 @@ dayBlock.on("click", function () {
         }
     }
 
+    if (localStorage.length === 0) {
+        workoutList.text("")
+    }
+
     // displays modal
     workoutModal.show()
 
@@ -162,66 +172,23 @@ dayBlock.on("click", function () {
     })
 })
 
-// Workout button listener on scheduler that pulls up youtube videos
-$(".workout-btn").on("click", function () {
 
-    var buttonTxt = $(this).text()
-    console.log(buttonTxt)
+$(".close").on("click", function () {
+    var closeClicked = $(this)
+    var rowDt = $(this).parent().prev().html()
 
-    var youtubeAPI = "https://www.googleapis.com/youtube/v3/search"
-    var apiKey = "AIzaSyAFvkpiXzwbO7dR0Nu3SG6_RcNQQT4fvJQ"
+    for (var s = 0; s < localStorage.length; s++) {
 
-    function getYoutube() {
-        $.ajax({
-            url: youtubeAPI,
-            type: "GET",
-            data: {
-                key: apiKey,
-                q: buttonTxt,
-                maxResults: 5,
-                type: "video",
-                videoEmbeddable: true,
-                part: "snippet"
-            },
-            success: function (data) {
-                embedVideo(data)
-            },
-            error: function (response) {
-                console.log("Request Failed");
-            }
-        })
-    }
-
-    function embedVideo(data) {
-
-        var videoDiv = $("<div>").addClass("video-model")
-        $(".container").prepend(videoDiv)
-
-        var vidModalContent = $("<div>").addClass("video-modal-content")
-        videoDiv.append(vidModalContent)
-
-        var videosClose = $("<span>").addClass("video-close")
-        vidModalContent.append(videosClose)
-        videosClose.html('&times;')
-
-        videosClose.on("click", function () {
-
-            $(".video-model").remove()
-        })
-
-        var videosDiv = $("<section>").addClass("video-display")
-        vidModalContent.append(videosDiv)
-
-        for (var i = 0; i < data.items.length; i++) {
-
-            var videoTitle = $("<h3>").html(data.items[i].snippet.title)
-            var currentIframe = $("<iframe>")
-
-            currentIframe.attr('src', 'https://www.youtube.com/embed/' + data.items[i].id.videoId)
-
-            videosDiv.append(videoTitle, currentIframe)
-            console.log(data.items[i])
+        if (rowDt === localStorage.key(s)) {
+            localStorage.removeItem(localStorage.key(s))
+            closeClicked.siblings().remove()
+            break
         }
     }
-    getYoutube()
+})
+
+$("#clear-btn").on("click", function() {
+
+    localStorage.clear()
+    $(".workout-btn").remove()
 })
