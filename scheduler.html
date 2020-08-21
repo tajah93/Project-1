@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"><!-- Font Awesome required for MD Bootstrap-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts required for MD Bootstrap-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS required for MD Bootstrap-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap required for MD Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="scheduler.css">
+
+  <!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips required for MD Bootstrap-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript required for MD Bootstrap-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <title>Trim(Fit)</title>
+</head>
+
+<body class="background-color">
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar bg-primary" id="navbar">
+    <a class="navbar-brand" href="#">trim(fit)</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="scheduler.html">Schedule Workouts<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="maps.html">Find Workout Locations</a>
+      </li>
+      </ul>
+    </div>
+  </nav>
+
+  
+  <div class="container">
+    <h1 id="time"></h1>
+    <h3 id="mySched">My Schedule</h3>
+
+    <div id="scheduler-modal" class="modal">
+
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p class="modal-text"></p>
+        <p class="workout-list"></p>
+        <br>
+        <p>Enter exercise below</p>
+        <br><br>
+        <input id="textarea" type="text">
+        <button id="submit-workout">Submit</button>
+      </div>
+    </div>
+
+    <table class="table" class="highlight">
+      <tbody>
+        <tr>
+          <td class="Days">Sunday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Monday</td>
+
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Tuesday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Wednesday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Thursday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Friday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Saturday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ul class="pagination">
+    <li class="disabled"><a href="#!"><i class="material-icons">&lt;</a></li>
+    <li class="active"><a href="#!">1</a></li>
+    <li class="waves-effect" id="pageNumber"><a href="#!">2</a></li>
+    <li class="waves-effect"><a href="#!"><i class="material-icons">&gt;</i></a></li>
+  </ul>
+
+  <footer class="page-footer">
+    <div class="container">
+
+      <p class="footer-text">© 2020, Trim(fit), All rights reserved.</p>
+    </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"
+    integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+  <script src="scheduler.js"></script>
+  <!-- <script src= "lib/moment/moment.min.js"></script> -->
+
+
+
+</body>
+
+</html>

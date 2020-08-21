@@ -9,6 +9,12 @@
     color: orangered;
 }
 
+.name-greeting {
+    color: orangered;
+    font-size: xx-large;
+    font-weight: 500;
+}
+
 body {
     background-color: grey;
 }
@@ -19,9 +25,70 @@ body {
 
 .card.card-body {
     background-color: black;
-    color: orangered
+    color: orangered;
 }
 
 .btn.btn-dark {
     color: orangered;
+}
+
+.btn-block {
+    margin-bottom: 3px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close {
+    color: black;
+    align-self: end;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: orangered;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#textarea {
+    max-width: 65%;
+}
+
+#submit-name {
+    margin-top: 3px;
+    width: fit-content;
+    background-color: black;
+    border-color: orangered;
+    color: orangered;
+    font-weight: 700;
+    transition: all .3s ease-in-out;
+}
+
+#submit-name:hover {
+    background-color: orangered;
+    border-color: black;
+    color: black;
+    transition: all .3s ease-in-out;
 }
