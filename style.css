@@ -62,10 +62,14 @@ a:hover {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
+}
+
+.modal-content img {
+    height: 50vh;
 }
 
 .close {
@@ -114,4 +118,19 @@ footer {
 .footer-text {
     text-align: center;
     font-family: 'Be Vietnam', sans-serif;
+}
+
+
+@media screen and (max-width: 650px) {
+
+    .modal-content {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .modal-content img {
+        width: 27vh;
+    }
 }
