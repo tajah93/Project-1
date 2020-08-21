@@ -180,3 +180,18 @@ iframe {
     width: 100%;
     height: 45vh;  
 }
+
+@media screen and (max-width: 1300px) {
+    
+    .video-modal-content {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 775px){
+
+    .video-modal-content {
+
+        width: 100%;
+    }
+}
