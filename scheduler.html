@@ -6,74 +6,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-  <link rel="stylesheet" href="scheduler.css">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@300&display=swap" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="scheduler.css">
 
   <title>trim(Fit)</title>
 </head>
 
 <body class="background-color">
   <nav class="navbar navbar">
-    <a class="navbar-brand" href="#">Trim(fit)</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Home </a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">My Schedule <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Find Workout Locations</a>
-      </li>
-    </ul>
-  </div>
+    <a class="navbar-brand" href="index.html">Trim(fit)</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">My Schedule <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Find Workout Locations</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 
   <div class="container">
-   <h1 id="time"></h1>
-   <h3 id="mySched">My Schedule</h3>
+    <h1 id="time"></h1>
+    <h3 id="mySched">My Schedule</h3>
 
-   <table class="table" class="highlight">
-    <tbody>
-      <tr>
-        <td class="Days">Sunday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-      <tr>
-        <td class="Days">Monday</td>        <td class="workoutPlan"></td>
-      </tr>
-      <tr>
-        <td class="Days">Tuesday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-      <tr>
-        <td class="Days">Wednesday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-      <tr>
-        <td class="Days">Thursday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-      <tr>
-        <td class="Days">Friday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-      <tr>
-        <td class="Days">Saturday</td>
-        <td class="workoutPlan"></td>
-      </tr>
-    </tbody>
-  </table>
+    <div id="scheduler-modal" class="modal">
+
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p class="modal-text"></p>
+        <p class="workout-list"></p>
+        <br>
+        <p>Enter exercise below</p>
+        <br><br>
+        <input id="textarea" type="text">
+        <button id="submit-workout">Submit</button>
+      </div>
+    </div>
+
+    <table class="table" class="highlight">
+      <tbody>
+        <tr>
+          <td class="Days">Sunday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Monday</td>
+
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Tuesday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Wednesday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Thursday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Friday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+        <tr>
+          <td class="Days">Saturday</td>
+          <td class="workoutPlan"></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <ul class="pagination">
@@ -84,16 +103,21 @@
   </ul>
 
   <footer class="page-footer">
-        <p class="footer-text">© 2020  Copyright:
-        <a href="index.html">trim(fit)</a>
-        <a>-All rights reserved</a>
-        </p>
+    <div class="container">
+
+      <p class="footer-text">© 2020, Trim(fit), All rights reserved.</p>
+    </div>
+    </div>
   </footer>
-  
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="scheduler.js"></script>
-<script src= "lib/moment/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"
+    integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+  <script src="scheduler.js"></script>
+  <!-- <script src= "lib/moment/moment.min.js"></script> -->
+
+
 
 </body>
+
 </html>
