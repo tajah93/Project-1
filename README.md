@@ -85,7 +85,7 @@ Lastly, clicking the workout buttons will trigger a YouTube API response and ren
 
 ## Map Page ##
 
-**Style: maps.html and maps.css**
+**Style: maps.html**
 
 
 
