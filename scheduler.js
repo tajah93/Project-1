@@ -9,7 +9,7 @@ var workoutList = $(".workout-list")
 var numberCheck = RegExp(/[0-9]/)
 
 // Assigns proper date to each day of the week on scheduler
-function renderWorkouts() {
+function renderDate() {
     for (i = 0; i < dayBlock.length; i++) {
 
         var blockToWrite = dayBlock[i]
@@ -22,22 +22,57 @@ function renderWorkouts() {
     }
 }
 
-renderWorkouts()
+renderDate()
 
 // creates workout button for each scheduled workout found in local storage and renders those buttons on correct row
-for (k = 0; k < localStorage.length; k++) {
+function renderWorkouts() {
+    for (k = 0; k < localStorage.length; k++) {
 
-    var scheduledArray = localStorage.getItem(localStorage.key(k)).split(", ")
+        var scheduledArray = localStorage.getItem(localStorage.key(k)).split(", ")
 
-    for (w = 0; w < scheduledArray.length; w++) {
+        for (w = 0; w < scheduledArray.length; w++) {
 
-        var correctBlock = $("td:contains('" + localStorage.key(k) + "')")
-        var storedWorkout = scheduledArray[w]
-        var workoutBtn = $("<button>").addClass("workout-btn")
-        workoutBtn.text(storedWorkout)
-        correctBlock.next().append(workoutBtn)
+            var correctBlock = $("td:contains('" + localStorage.key(k) + "')")
+            var storedWorkout = scheduledArray[w]
+            var workoutBtn = $("<button>").addClass("workout-btn")
+            workoutBtn.text(storedWorkout)
+            correctBlock.next().append(workoutBtn)
+        }
     }
 }
+
+renderWorkouts()
+
+$(".dates-back").on("click", function () {
+
+    for (b = 0; b < dayBlock.length; b++) {
+
+        var blockToWrite = dayBlock[b]
+        var dayDateTxt = blockToWrite.innerHTML
+        var backDayDt = moment(dayDateTxt, "dddd, L").subtract("7", "days").format("dddd, L")
+
+        blockToWrite.innerHTML = backDayDt
+    }
+
+    $(".workout-btn").remove()
+    renderWorkouts()
+})
+
+$(".dates-forward").on("click", function () {
+
+    for (b = 0; b < dayBlock.length; b++) {
+
+        var blockToWrite = dayBlock[b]
+        var dayDateTxt = blockToWrite.innerHTML
+        var forwardDayDt = moment(dayDateTxt, "dddd, L").add("7", "days").format("dddd, L")
+
+        blockToWrite.innerHTML = forwardDayDt
+    }
+
+    $(".workout-btn").remove()
+    renderWorkouts()
+})
+
 
 // Workout button listener on scheduler that pulls up youtube videos
 function workoutBtnEvent() {
@@ -187,7 +222,7 @@ $(".close").on("click", function () {
     }
 })
 
-$("#clear-btn").on("click", function() {
+$("#clear-btn").on("click", function () {
 
     localStorage.clear()
     $(".workout-btn").remove()

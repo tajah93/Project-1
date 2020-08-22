@@ -224,6 +224,21 @@ iframe {
     color: orangered
 }
 
+@media screen and (max-width: 1300px) {
+    
+    .video-modal-content {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 775px){
+
+    .video-modal-content {
+
+        width: 100%;
+    }
+}
+
 /* make media q for horizonatal option using a range for min-width and max
 /*@media only screen and (min-width: 760px) {
     .workout-btn {
