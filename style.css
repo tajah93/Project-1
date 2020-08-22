@@ -28,17 +28,26 @@ h1.blocktext {
     width: fit-content;
 }
 
-a {
+.hyperlink {
     color:orangered;
     transition: all .3s ease-in-out;
     text-decoration: underline
 }
 
-a:hover{
+.hyperlink:hover {
     color: gray;
     transition: all .3s ease-in-out;
 }
 
+.about-btn {
+    color: whitesmoke;
+    background-color: orangered
+}
+
+.about-btn:hover {
+    color: whitesmoke;
+    background-color: black;
+}
 
 body {
     background-color: grey;
@@ -136,6 +145,12 @@ footer {
     font-family: 'Be Vietnam', sans-serif;
 }
 
+@media screen and (max-width: 701px) {
+
+    .name-greeting {
+        font-size: larger;
+    }
+}
 
 @media screen and (max-width: 650px) {
 

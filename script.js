@@ -19,6 +19,7 @@ function renderGreeting() {
 
             var currentDayDt = moment().format("dddd, L")
             var schedulerLink = $("<a>").attr("href", "scheduler.html")
+            schedulerLink.addClass("hyperlink")
             schedulerLink.text("scheduler page")
            
 
