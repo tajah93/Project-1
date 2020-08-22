@@ -39,15 +39,27 @@ h1.blocktext {
     transition: all .3s ease-in-out;
 }
 
-.about-btn {
+.orange-btn {
     color: whitesmoke;
     background-color: orangered
 }
 
-.about-btn:hover {
+.orange-btn:hover {
     color: whitesmoke;
     background-color: black;
 }
+
+::placeholder { 
+    color: black;
+    background-color: whitesmoke;
+    padding-left: 10px;
+    margin-left: 10px;
+  }
+
+  .md-form input{
+      border:2px solid black
+  }
+  
 
 body {
     background-color: grey;
@@ -140,7 +152,9 @@ footer {
     
 }
 
+
 .footer-text {
+    padding-top: 10px;
     text-align: center;
     font-family: 'Be Vietnam', sans-serif;
 }
