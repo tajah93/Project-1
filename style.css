@@ -146,15 +146,11 @@ a:hover {
 footer {
     display: flex;
     flex-direction: column;
-    
-    
-    margin-top: 40px;
-    
 }
 
 
 .footer-text {
-    padding-top: 10px;
+    padding-top: 5px;
     text-align: center;
     font-family: 'Be Vietnam', sans-serif;
 }
