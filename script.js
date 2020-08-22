@@ -18,10 +18,15 @@ function renderGreeting() {
         for (s = 0; s < localStorage.length; s++) {
 
             var currentDayDt = moment().format("dddd, L")
+            var schedulerLink = $("<a>").attr("href", "scheduler.html")
+            schedulerLink.text("scheduler page")
+           
 
             if (moment(localStorage.key(s)).format("dddd, L") === currentDayDt) {
 
-                greeting.text("Hello, " + greetingName + "! You have workouts scheduled today! Please see the scheduler page.")
+                greeting.text("Hello, " + greetingName + "! You have workouts scheduled today! Please see the ")
+                greeting.append(schedulerLink)
+                greeting.append(".")
                 break;
             } else (
                 greeting.text("Hello, " + greetingName + "! You don't have any workouts scheduled today!")
