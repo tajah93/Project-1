@@ -8,7 +8,7 @@ The purpose of this project was to create a mobile-friendly fitness application 
 
 ## User Story ##
 
->AS A beginner in a fitness  
+>AS A beginner in fitness  
 I WANT workout ideas and how-to tutorials to schedule for the week <br />
 SO THAT I can keep track of what I'm doing and when I'm doing it <br />
 I ALSO WANT to have set reminders of scheduled workouts <br />
