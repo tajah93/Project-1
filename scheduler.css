@@ -9,8 +9,14 @@
 }
 
 .nav-link {
-    background-color: rgba(34, 34, 34, 0.445);
+    background-color: rgba(34, 34, 34, 0);
     color: orangered !important;  
+}
+
+@media screen and (max-width: 991px) {
+    .nav-link {
+        background-color: rgba(34, 34, 34, 0.952);
+    }
 }
 
 button.navbar-toggler {
@@ -38,10 +44,17 @@ button.navbar-toggler:active {
     margin-top: 80px;
     float: right;
     font-size: 8px;
-    height: 5vh;
+    height: fit-content;
     font-weight: bolder;
 }
 
+#clear-btn:active {
+    transform: translateY(4px);
+}
+
+#clear-btn:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.63), 0 10px 30px 0 rgba(0, 0, 0, 0.616);
+}
 .table {
     border: 2px solid;
     border-color: orangered;
