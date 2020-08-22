@@ -8,8 +8,8 @@ The purpose of this project was to create a mobile-friendly fitness application 
 
 ## User Story ##
 
->AS A beginner in fitness  
-I WANT workout ideas and how-to tutorials to scedule for the week <br />
+>AS A beginner in a fitness  
+I WANT workout ideas and how-to tutorials to schedule for the week <br />
 SO THAT I can keep track of what I'm doing and when I'm doing it <br />
 I ALSO WANT to have set reminders of scheduled workouts <br />
 SO THAT I do not forget to workout and I am held accountable in completing that workout
@@ -53,13 +53,13 @@ If the user has submitted their name, they will have a small greeting message be
 
 The scheduler page has a simple, sleek style that is cohesive with the home and map pages. The entire page is mobile responsive so that it is easily accessible and viewed by users on the go. 
 
-The navbar allows for the user to easily navigate through the application. It also contains a table to serve as the actual scheduler with the first column being the day block and the second column being the being the workout plan. 
+The navbar allows the user to easily navigate through the application. It also contains a table to serve as the actual scheduler with the first column being the day block and the second column being the workout plan. 
 
-When hovered, the specific day block transitions colors and is highlighted so that the user knows that it is meant to be clicked. There is also a message at the top of the scheduler that states to click the day block for scheduling in case the user is on their phone or tablet. A modal to enter the workout or tutorial desired is displyed once the day block is clicked. 
+When hovered, the specific day block transitions colors and is highlighted so that the user knows that it is meant to be clicked. There is also a message at the top of the scheduler that states to click the day block for scheduling in case the user is on their phone or tablet. A modal to enter the workout or tutorial desired is displayed once the day block is clicked. 
 
-After the user submits their workout plan, it is then appended onto the second column. The user will be able to access a number of YouTube videos (shown using a modal) related to the workout by simply clicking the plan that was appended to the page. The plan also changes colors when hovered over so that the user knows it is being selected.
+After the user submits their workout plan, it is then appended onto the second column. The user will be able to access many YouTube videos (shown using a modal) related to the workout by simply clicking the plan that was appended to the page. The plan also changes colors when hovered over so that the user knows it is being selected.
 
-If the user decides to delete a workout, it can be done two ways: clicking the "x" button in each plan block or clicking the "Clear All Workouts" button in the top right-hand corner of the page. The "x" button will transtion colors when it is hovered over and the "Clear All Workouts" button will cast a darker shadow and press down when clicked. 
+If the user decides to delete a workout, it can be done two ways: clicking the "x" button in each plan block or clicking the "Clear All Workouts" button in the top right-hand corner of the page. The "x" button will transition colors when it is hovered over and the "Clear All Workouts" button will cast a darker shadow and press down when clicked. 
 
 Finally, the user can switch through weeks (moving forward or backward in time) by clicking on the angle brackets at the bottom of each page. 
 
@@ -67,21 +67,21 @@ Finally, the user can switch through weeks (moving forward or backward in time) 
 
 **Functionality: scheduler.js**
 
-On page load, a table renders rows for each day of the week with two columns each - one that displays the weekday and date, and the other that will render buttons for workouts entered by the user. When the page is loaded, local storage is checked to see if any workouts for the currently displayed days exists, arrays are created for values of keys that do match displayed dates, and a button is rendered in the second row of the appropriate column for each item in that array.
+On page load, a table renders rows for each day of the week with two columns each - one that displays the weekday and date, and the other that will render buttons for workouts entered by the user. When the page is loaded, local storage is checked to see if any workouts for the currently displayed days exist, arrays are created for values of keys that do match displayed dates, and a button is rendered in the second row of the appropriate column for each item in that array.
 
 The first column of each row is clickable- doing so will show a modal to the user displaying any workouts the user has already scheduled for the current day (the section where the workouts exist will be blank if the user has none). The modal also provides the user the ability to enter a workout and submit it. Once the user does this, the workout list in the modal is dynamically updated, and a button for that workout is also rendered in the second column of that date's row. Local storage will also store the workout list as a value with the key being the date of the date block clicked to make the modal appear. This workout list store happens regardless of whether or not a key with that respective date exists so that local storage will simply update the value of that key even if it already exists.
 
 Users have two methods of clearing these workouts from the calendar: a time row-specific clear and a global clear. 
 
-The time row clear is triggered by a close icon in the top right corner of the second column in each row. This clear button will clear local storage of the item whose key matches the date of the first column in that row and removes all workout buttons from that row's second column.
+The time row clear is triggered by a close icon in the top right corner of the second column in each row. This clear button will clear the local storage of the item whose key matches the date of the first column in that row and removes all workout buttons from that row's second column.
 
 The global clear, labeled "Clear All Workouts", stores the username value (if one exists), clears all of local storage and deletes all displayed workout buttons in each row, and then re-enters the stored username value with the existing "username" key name.
 
 At the bottom of the page, the user has "<" and ">" icons. 
 
-Clicking the "<" icon will go to the previous week from where the user's scheduler currently is, and will render buttons for any workouts that exist for any of the dates in local storage. Clicking the ">" icon will go to the next week from where the user's scheduler currently is, and will render buttons for any workouts that match those new dates.
+Clicking the "<" icon will go to the previous week from where the user's scheduler currently is and will render buttons for any workouts that exist for any of the dates in local storage. Clicking the ">" icon will go to the next week from where the user's scheduler currently is and will render buttons for any workouts that match those new dates.
 
-Lastly, clicking the workout buttons will trigger a youtube api response and render 3 videos from youtube in a modal with the workout button's text as the search subject.
+Lastly, clicking the workout buttons will trigger a YouTube API response and render 3 videos from youtube in a modal with the workout button's text as the search subject.
 
 ## Map Page ##
 
