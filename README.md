@@ -36,8 +36,11 @@ SO THAT I can remove a routine and reschedule just in case I am too busy that da
 
 **Style: index.html and style.css**
 
-
-
+The color palette of the trim(fit) app is a contrast of orange, grey and black. 
+The homepage can be divided into 3 parts:
+1. A Jumbotron with a background image(using Material Design Bootstrap) contains the App title, a greeting message(not for first time users) and a collapseable About button.
+2. The main body of the homepage has 3 buttons - A "Get Started" Button(for First time users only), "Schedule your workout" Button(that takes the user to the scheduler page) and "Find parks and fitness centers" button (that takes the user to the Maps page).
+3. A sticky footer with a Copyright notice
 
 **Functionality: Script.js** 
 
@@ -85,12 +88,15 @@ Lastly, clicking the workout buttons will trigger a YouTube API response and ren
 
 ## Map Page ##
 
-**Style: maps.html**
+**Style: maps.html and style.css**
 
-
-
+The map page adheres to the same color scheme as the rest of the application with a nav-bar that allows users access to the home and scheduler pages. The body of the page contains a input field that requires the user to enter zip-code followed by a Search Button.
+When the user clicks the search Button, the page displays a google map with all the parks and fitness centers around the zip address.
 
 **Functionality: maps.js**
+
+When the search button is clicked an onclick funtion is called that gets the zipcode from the input text area and adds it to the google maps url which contains the API key.
+When the URL of the iframe Element is updated, it displays the Map on the html page. 
 
 
 ## Images ##
