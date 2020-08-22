@@ -90,7 +90,7 @@ function workoutBtnEvent() {
                 data: {
                     key: apiKey,
                     q: buttonTxt,
-                    maxResults: 5,
+                    maxResults: 3,
                     type: "video",
                     videoEmbeddable: true,
                     part: "snippet"
@@ -224,6 +224,9 @@ $(".close").on("click", function () {
 
 $("#clear-btn").on("click", function () {
 
+    var username = localStorage.getItem("username")
     localStorage.clear()
+
     $(".workout-btn").remove()
+    localStorage.setItem("username",username)
 })
