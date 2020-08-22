@@ -55,6 +55,7 @@ button.navbar-toggler:active {
 #clear-btn:hover {
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.63), 0 10px 30px 0 rgba(0, 0, 0, 0.616);
 }
+
 .table {
     border: 2px solid;
     border-color: orangered;
@@ -71,6 +72,14 @@ button.navbar-toggler:active {
     color: white;
     font-family: 'Be Vietnam', sans-serif;
 }
+
+.Days:hover {
+    background-color: black;
+    color: orangered;
+    box-shadow: 0 6px 10px 0 rgba(255, 68, 0, 0.61), 0 10px 30px 0 rgba(255, 68, 0, 0.664);
+}
+
+
 
 .workoutPlan {
     width: 30vw;
