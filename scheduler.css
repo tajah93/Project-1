@@ -56,6 +56,12 @@ button.navbar-toggler:active {
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.63), 0 10px 30px 0 rgba(0, 0, 0, 0.616);
 }
 
+#getStarted {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
 .table {
     border: 2px solid;
     border-color: orangered;
