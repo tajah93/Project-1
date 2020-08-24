@@ -99,4 +99,23 @@ When the search button is clicked an onclick funtion is called that gets the zip
 When the URL of the iframe Element is updated, it displays the Map on the html page. 
 
 
-## Images ##
+## Demos ##
+
+![Home Page Demo](Demos/HomePageDemo_Trim(fit).gif)
+
+![Scheduler Page Demo](Demos/SchedulerPageDemo.gif)
+
+![Scheduler Page Cont. Demo](Demos/SchedContDemo.gif)
+
+![Map Page Demo](Demos/MapsDemo.gif)
+
+![Reminder Demo](Demos/ReminderDemo.gif)
+
+## Mobile Images ##
+
+![Home Page Mobile View](Demos/TrimFit.png)
+
+![Scheduler Page Mobile View](Demos/Sched_Mobile.png)
+
+![Map Page Mobile View](Demos/Maps_Demo.png)
+
