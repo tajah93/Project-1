@@ -109,7 +109,7 @@ When the URL of the iframe Element is updated, it displays the Map on the html p
 
 ![Map Page Demo](Demo/MapsDemo.gif)
 
-![Reminder Demo](Demos/ReminderDemo.gif)
+![Reminder Demo](Demo/ReminderDemo.gif)
 
 ## Mobile Images ##
 
