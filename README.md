@@ -105,7 +105,7 @@ When the URL of the iframe Element is updated, it displays the Map on the html p
 
 ![Scheduler Page Demo](Demo/SchedulerPageDemo.gif)
 
-![Scheduler Page Cont. Demo](Demos/SchedContDemo.gif)
+![Scheduler Page Cont. Demo](Demo/SchedContDemo.gif)
 
 ![Map Page Demo](Demos/MapsDemo.gif)
 
