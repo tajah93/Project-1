@@ -113,9 +113,9 @@ When the URL of the iframe Element is updated, it displays the Map on the html p
 
 ## Mobile Images ##
 
-![Home Page Mobile View](Demos/TrimFit.png)
+![Home Page Mobile View](Demo/TrimFit.png)
 
-![Scheduler Page Mobile View](Demos/Sched_Mobile.png)
+![Scheduler Page Mobile View](Demo/Sched_Mobile.png)
 
-![Map Page Mobile View](Demos/Maps_Demo.png)
+![Map Page Mobile View](Demo/Maps_Demo.png)
 
