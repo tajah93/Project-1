@@ -4,7 +4,7 @@
 
 The purpose of this project was to create a mobile-friendly fitness application with the help of multiple third-party APIs. The user is presented with an easy-to-use product while still maintaining optimum functionality. 
 
-**LIVE LINK:**
+**LIVE LINK:** https://tajah93.github.io/Project-1/
 
 ## User Story ##
 
